@@ -17,4 +17,4 @@ phases:
        - docker push 113313628113.dkr.ecr.us-east-1.amazonaws.com/sample_function:latest
     finally:
        - echo "Build has been finished !"
-       - echo ls -l
+       - ls -l
