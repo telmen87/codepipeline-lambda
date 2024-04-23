@@ -7,9 +7,15 @@ phases:
     commands:
        - echo "Codebuild has been started !"
   pre_build:
-   commands:
+    commands:
        - cd scr 
        - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 113313628113.dkr.ecr.us-east-1.amazonaws.com
+       - echo "Prebuilt command"
+       - ls -l
+    finally:
+       - echo "Prebuilt finally"
+       - ls -l
+
   build:
     commands:
        - docker build -t sample-function:latest --platform linux/amd64 .
