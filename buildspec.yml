@@ -11,4 +11,4 @@ phases:
        - cd scr 
        - docker build -t sample-function --platform linux/amd64 -t docker-image:test .
        - docker run --platform linux/amd64 -p 9000:8080 docker-image:test
-       - curl "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{}'
+       - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 111122223333.dkr.ecr.us-east-1.amazonaws.com
