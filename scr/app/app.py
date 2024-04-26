@@ -3,7 +3,12 @@ from functions import get_df
 
 def lambda_handler(event, context):    
 
+    time1 = time.time()
+    time.wait(1)
+    time2 = time.time()
+
     return {
         'statusCode' : 200,
-        'body' : f'Hello World ! {time.time(), get_df(), time.time()}',
+        'body' : f'Hello World ! {time1, time2}',
     }
+
