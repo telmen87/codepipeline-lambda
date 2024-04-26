@@ -21,6 +21,6 @@ phases:
        - docker build -t sample-function:latest --platform linux/amd64 .
        - docker tag sample-function:latest 113313628113.dkr.ecr.us-east-1.amazonaws.com/sample_function:latest
        - docker push 113313628113.dkr.ecr.us-east-1.amazonaws.com/sample_function:latest
+       - aws lambda update-function-code sample-function --image-uri 113313628113.dkr.ecr.us-east-1.amazonaws.com/sample_function:latest
     finally:
        - echo "Build has been finished !"
-       - ls -l
