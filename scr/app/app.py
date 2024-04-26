@@ -4,7 +4,7 @@ from functions import get_df
 def lambda_handler(event, context):    
 
     time1 = time.time()
-    time.wait(1)
+    time.sleep(1)
     time2 = time.time()
 
     return {
